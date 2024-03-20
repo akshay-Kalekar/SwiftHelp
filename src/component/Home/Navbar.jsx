@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className="flex items-center justify-center  px-4 py-2 bg-white">
@@ -13,15 +13,16 @@ const Navbar = () => {
       
       {/* Text 2 */}
       <div className="flex items-center mr-1">
-        <span className="mr-2">Research and Advocacy</span>
-        <select className="border">
-          
-        </select>
+        <Link to={'blog'}>
+        <span className="mr-2">Blog</span>
+        </Link>
       </div>
       
       {/* Text 3 */}
       <div className="flex items-center mr-1">
+        <Link to={'filter'}>
         <span className="mr-2">Support Us</span>
+        </Link>
         <select className="border">
           
         </select>
