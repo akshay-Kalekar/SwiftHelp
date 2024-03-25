@@ -1,47 +1,41 @@
+import {Link} from 'react-router-dom'
 const Navbar = () => {
   return (
     <div className="flex items-center justify-center  px-4 py-2 bg-white border">
-      <div className="flex items-center mr-1">
-        <li className="dropdown">
-          <a className="mr-2 font-bold">About Donation ▼</a>
-          <div className="dropdown-content">
-            <a href="#">Place 1</a>
-            <a href="#">Place 2</a>
-            <a href="#">Place 3</a>
-          </div>
-        </li>
-        <li className="dropdown">
-          <a className="mr-2 font-bold">Research and Advocac ▼</a>
-          <div className="dropdown-content">
-            <a href="#">Place 1</a>
-            <a href="#">Place 2</a>
-            <a href="#">Place 3</a>
-          </div>
-        </li>
-        <li className="dropdown">
-          <a className="mr-2 font-bold">Support Us ▼</a>
-          <div className="dropdown-content">
-            <a href="#">Place 1</a>
-            <a href="#">Place 2</a>
-            <a href="#">Place 3</a>
-          </div>
-        </li>
-        <li className="dropdown">
-          <a className="mr-2 font-bold">About Us ▼</a>
-          <div className="dropdown-content">
-            <a href="#">Place 1</a>
-            <a href="#">Place 2</a>
-            <a href="#">Place 3</a>
-          </div>
-        </li>
-        <li className="dropdown">
-          <a className="mr-2 font-bold">News and Stories ▼</a>
-          <div className="dropdown-content">
-            <a href="#">Place 1</a>
-            <a href="#">Place 2</a>
-            <a href="#">Place 3</a>
-          </div>
-        </li>
+      <div className="flex items-center mr-1 justify-between">
+      <details className="dropdown">
+  <summary className="m-1 ">About Donation</summary>
+  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+    <li>
+    <Link to='/blog'>
+
+      <a>Blog</a>
+    </Link>
+      </li>
+  </ul>
+</details>
+<details className="dropdown">
+  <summary className="m-1 ">Research and advocates </summary>
+  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+    <li>Place 1</li>
+  </ul>
+</details><details className="dropdown">
+  <summary className="m-1 ">Support Us</summary>
+  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+    <li>Place 1</li>
+  </ul>
+</details><details className="dropdown">
+  <summary className="m-1 ">About Us </summary>
+  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+    <li>Place 1</li>
+  </ul>
+</details>
+<details className="dropdown">
+  <summary className="m-1 ">News and Stories </summary>
+  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+    <li>Place 1</li>
+  </ul>
+</details>
       </div>
     </div>
   );

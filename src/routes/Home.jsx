@@ -4,6 +4,7 @@ import Middle from '../component/Home/Middle'
 import Endpart from '../component/Home/Endpart'
 import Contact from '../component/Home/Contact'
 import Volunteer from '../component/Home/Volunteer'
+
 const root = () => {
     return (
       <div className="app-container">

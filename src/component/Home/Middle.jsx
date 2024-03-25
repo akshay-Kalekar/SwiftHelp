@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Middle = () => {
   return (
     <section className="bg-white py-16 lg:py-32">
@@ -18,9 +19,11 @@ const Middle = () => {
             <button className="px-4 py-2 mr-4 bg-gray-500 text-white hover:bg-black">
               Donate Today
             </button>
+            <Link to='/filter'>
             <button className="px-4 py-2 bg-gray-500 text-white hover:bg-black">
               Ask For Blood Bag
             </button>
+            </Link>
           </div>
         </div>
 
