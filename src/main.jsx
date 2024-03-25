@@ -7,8 +7,10 @@ import {
 import Home from "./routes/Home.jsx";
 import ErrorPage from "./error-page";
 import './index.css'
+import Auth from './routes/Auth.jsx';
 import Blog from './routes/Blog.jsx';
 import Filter from './routes/Filter.jsx';
+import Signup from './routes/Signup.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,6 +27,16 @@ const router = createBrowserRouter([
   {
     path: "/filter",
     element: <Filter />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/auth",
+    element: <Auth />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
     errorElement: <ErrorPage />,
   },
 ]);

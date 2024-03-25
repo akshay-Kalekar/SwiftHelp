@@ -1,35 +1,49 @@
-import React from 'react';
-
 const Middle = () => {
   return (
-    <>
-    <div className="flex">
-      {/* First div */}
-      <div className="flex flex-col items-center justify-between w-1/2 p-4 bg-white">
-        <div className='text-center'>
-          <h1 className="text-6xl font-bold mb-4 text-orange-500">Donate to</h1>
-          <h1 className="text-6xl font-bold mb-4 text-orange-500">Keep Families</h1>
-          <h1 className="text-6xl font-bold mb-4 text-orange-500">together in</h1>
-          <h1 className="text-6xl font-bold mb-4 text-orange-500">the Future</h1>
-          <p className=''>In the 14 years since Jacob Benson sadly passed away from leukaemia,
-over 60,000 people of all ages have lost their lives to the disease. Donate
-this Christmas to help keep families together in the future.</p>
+    <section className="bg-white py-16 lg:py-32">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center">
+        <div className="w-full lg:w-1/2 px-6">
+          <h1 className="text-7xl font-bold text-orange-500">
+            Donate to <br /> Keep Families <br />
+            <u>together</u> in <br />
+            the Future
+          </h1>
+          <p className="mt-4 text-xl text-gray-600">
+            In the 14 years since Jacob Benson sadly passed away from leukaemia,
+            over 60,000 people of all ages have lost their lives to the disease.
+            Donate this Christmas to help keep families together in the future.
+          </p>
+
+          <div className="mt-8">
+            <button className="px-4 py-2 mr-4 bg-gray-500 text-white hover:bg-black">
+              Donate Today
+            </button>
+            <button className="px-4 py-2 bg-gray-500 text-white hover:bg-black">
+              Ask For Blood Bag
+            </button>
+          </div>
         </div>
-        <div className="flex">
-          <button className="px-4 py-2 mr-2 bg-gray-500 text-white rounded-md hover:bg-black">Donate Today</button>
-          <button className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-black">Our Blogs</button>
+
+        <div className="w-full lg:w-1/2">
+          <img
+            src="/images/image-2.png"
+            alt="Your Image"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
-      
-      {/* Second div */}
-      <div className="w-1/2">
-        <img src='/images/image-2.png' alt="Your Image" className="w-full h-full object-cover" />
+
+      <div
+        style={{ textAlign: "center" }}
+        className="container mx-auto my-8 py-16 space-between-0"
+      >
+        <p className="text-2xl font-bold text-orange-500">
+          Fund the <u>life-changing</u> research that matters most.{" "}
+          <u>Together</u> we can help <br /> people, save people by spreading
+          awareness, helping and donating.
+        </p>
       </div>
-    </div>
-    <div className='text-center my-4'>
-        <p className="text-2xl font-bold mb-4 text-orange-500" >fund the life-changing research that matters most. Together we can help people , save people by spreading awareness ,helping and donating</p>
-    </div>
-    </>
+    </section>
   );
 };
 

@@ -1,44 +1,86 @@
-import React from 'react';
-
 const Form = () => {
   return (
-    <>
-    <div className="text-center p-4 bg-gray-800">
-      {/* Text at the top */}
-      <p className='text-white '>How can you help</p>
-      <h2 className="text-lg font-bold mb-4 text-orange-500">Enable us to fund innovative research</h2>
+    <div
+      id="formbox"
+      className="flex flex-col items-center max-w-2xl p-6 mx-auto space-y-6 bg-gray-200 rounded-md shadow-md"
+    >
+      <p
+        style={{ marginRight: "auto", fontSize: "12px" }}
+        className=" font-semibold "
+      >
+        How can you help
+      </p>
+      <p id="formtext" className="text-lg font-medium">
+        Enable us to <span className="border-black px-2 py-1">fund</span>{" "}
+        innovative research
+      </p>
 
-      {/* Two buttons below the text */}
-      <div className="mb-4">
-        <button className="px-4 py-2 mr-2 bg-white text-black rounded-md hover:bg-black hover:text-white">Monthly</button>
-        <button className="px-4 py-2 mr-2 bg-white text-black rounded-md hover:bg-black hover:text-white">ONE-OFF</button>
+      <div className="justify-between flex flex-row space-x-3">
+        <button className="border-black border w-full px-6 py-2 bg-white text-black hover:bg-black hover:text-white">
+          Monthly
+        </button>
+        <button
+          style={{ marginLeft: "0", borderColor: "black" }}
+          className="border-black border w-full px-6 py-2 bg-black text-white hover:bg-white hover:text-black"
+        >
+          ONE-OFF
+        </button>
       </div>
 
-      {/* Four buttons in a row */}
-      <div className="flex justify-center mb-4">
-        <button className="px-4 py-2 mr-2 bg-white text-black rounded-md hover:bg-black hover:text-white">$$</button>
-        <button className="px-4 py-2 mr-2 bg-white text-black rounded-md hover:bg-black hover:text-white">$$</button>
-        <button className="px-4 py-2 mr-2 bg-white text-black rounded-md hover:bg-black hover:text-white">$$</button>
-        <button className="px-4 py-2 mr-2 bg-white text-black rounded-md hover:bg-black hover:text-white">$$</button>
+      <div className="justify-between flex flex-row space-x-3">
+        <button className="border-black border px-4 py-2 bg-white text-black hover:bg-black hover:text-white">
+          £15
+        </button>
+        <button className="border-black border px-4 py-2 bg-white text-black hover:bg-black hover:text-white">
+          £30
+        </button>
+        <button className="border-black border px-4 py-2 bg-white text-black hover:bg-black hover:text-white">
+          £50
+        </button>
+        <button className="border-black border px-4 py-2 bg-white text-black hover:bg-black hover:text-white">
+          £100
+        </button>
       </div>
 
-      {/* One button and an input box in a row */}
-      <div className="flex justify-center mb-4">
-        <button className="px-4 py-2 mr-2 bg-white text-black rounded-md hover:bg-black hover:text-white">Other</button>
-        <input type="text" className="px-3 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500" placeholder="Input Box" />
+      <div className="flex flex-row space-x-3">
+        <button className="border border-black px-4 py-2 bg-white text-black hover:bg-black hover:text-white">
+          Other
+        </button>
+        <input
+          style={{ marginLeft: "0" }}
+          type="text"
+          className="border border-black px-4 py-2 border border-red-500 focus:outline-black focus:border-black"
+          placeholder="Input Box"
+        />
       </div>
 
-      {/* Finally, a button below */}
-      <button className="px-4 py-2 bg-orange-700 text-white rounded-md hover:bg-gray-800">Donate</button>
+      <button
+        id="formdonatebtn"
+        className="w-full px-24 py-2 bg-orange-700 text-white rounded-md hover:bg-gray-800"
+      >
+        Donate
+      </button>
+
+      <div className="flex justify-center space-x-3">
+        <img
+          src="/images/apple-paysvg.png"
+          alt="Image 1"
+          className="w-12 h-5"
+        />
+        <img
+          src="/images/google-paysvg.png"
+          alt="Image 2"
+          className="w-12 h-5"
+        />
+        <img src="/images/paypalsvg.png" alt="Image 3" className="w-12 h-5" />
+        <img src="/images/visasvg.png" alt="Image 4" className="w-12 h-5" />
+        <img
+          src="/images/mastercardsvg.png"
+          alt="Image 5"
+          className="w-12 h-5"
+        />
+      </div>
     </div>
-    <div className="flex justify-center mb-4">
-        <img src="/images/apple-paysvg.png" alt="Image 1" className="w-auto h-auto mr-2" />
-        <img src="/images/google-paysvg.png" alt="Image 2" className="w-auto h-auto mr-2" />
-        <img src="/images/paypalsvg.png" alt="Image 3" className="w-auto h-auto mr-2" />
-        <img src="/images/visasvg.png" alt="Image 4" className="w-auto h-auto mr-2" />
-        <img src="/images/mastercardsvg.png" alt="Image 5" className="w-auto h-auto" />
-      </div>
-    </>
   );
 };
 
