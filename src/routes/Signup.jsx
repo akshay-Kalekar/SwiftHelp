@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useAuth0 } from "@auth0/auth0-react";
 const Signup = () => {
+  const { user} = useAuth0();
   const [formData, setFormData] = useState({
+    UserID : user.sub,
     UserName: '',
     FirstName: '',
     LastName: '',
@@ -25,13 +28,12 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:3000/api/signup',{
+    await axios.post('http://localhost:3000/api/user',{
       formData
     })
     // Handle form submission here, you can send formData to backend or perform any other action
     console.log(formData);
   };
-
   return (
     <div className="h-[100vh] w-[100vw] flex justify-center items-center">
 
