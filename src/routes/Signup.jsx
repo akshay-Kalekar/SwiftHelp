@@ -37,9 +37,8 @@ const Signup = () => {
   return (
     <div className="w-[100vw] flex flex-col justify-center items-center  gap-2">
           <h1 className='underline underline-offset-[6px] text-4xl font-serif p-4'> FORM </h1>
-    <form onSubmit={handleSubmit} className='w-full flex flex-col gap-4 px-48 py-10'>
+    <form onSubmit={handleSubmit} className='w-full flex flex-col gap-4 px-4 lg:px-48 py-10'>
       <div>
-
        Full Name
       <label className="input input-bordered flex items-center gap-2" >
         <input type="text" className="grow" name="UserName" value={formData.UserName} onChange={handleChange} />
@@ -66,7 +65,7 @@ const Signup = () => {
         <input type="password" name="Password" value={formData.Password} onChange={handleChange} />
       </label>
         </div>
-      <div className='flex gap-8'>
+      <div className='flex gap-8 flex-wrap'>
         <div>
         Age
       <label className="input input-bordered flex items-center gap-2" >
