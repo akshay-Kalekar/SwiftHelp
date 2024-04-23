@@ -35,7 +35,7 @@ const Signup = () => {
     console.log(formData);
   };
   return (
-    <div className="w-[100vw] flex flex-col justify-center items-center  gap-2">
+    <div className="w-[98vw] flex flex-col justify-center items-center  gap-2">
           <h1 className='underline underline-offset-[6px] text-4xl font-serif p-4'> FORM </h1>
     <form onSubmit={handleSubmit} className='w-full flex flex-col gap-4 px-4 lg:px-48 py-10'>
       <div>
@@ -131,12 +131,8 @@ const Signup = () => {
         <option value="0">0 Month Ago</option>
         <option value="1">1 Month Ago</option>
         <option value="2">2 Month Ago</option>
-        <option value="3">3 Month Ago</option>
-        <option value="4">4 Month Ago</option>
-        <option value="5">5 Month Ago</option>
-        <option value="6">6 Month Ago</option>
-        <option value="7">7 Month Ago</option>
-        <option value="8">8+ Month Ago</option>
+        <option value="3">3+ Month Ago</option>
+        <option value="4">Never Donated</option>
       </select>
       </label>
 
