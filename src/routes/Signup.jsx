@@ -35,54 +35,130 @@ const Signup = () => {
     console.log(formData);
   };
   return (
-    <div className="h-[100vh] w-[100vw] flex justify-center items-center">
+    <div className="w-[100vw] flex flex-col justify-center items-center  gap-2">
+          <h1 className='underline underline-offset-[6px] text-4xl font-serif p-4'> FORM </h1>
+    <form onSubmit={handleSubmit} className='w-full flex flex-col gap-4 px-48 py-10'>
+      <div>
 
-    <form onSubmit={handleSubmit} className='card w-96 flex flex-col gap-4'>
+       Full Name
       <label className="input input-bordered flex items-center gap-2" >
-        User Name:
         <input type="text" className="grow" name="UserName" value={formData.UserName} onChange={handleChange} />
       </label>
+      </div>
+      <div>
+
+        Email Address
       <label className="input input-bordered flex items-center gap-2" >
-        First Name:
         <input type="text" className="grow" name="FirstName" value={formData.FirstName} onChange={handleChange} />
       </label>
+      </div>
+      <div>
+
+        Contact Number
       <label className="input input-bordered flex items-center gap-2" >
-        Last Name:
         <input type="text" className="grow" name="LastName" value={formData.LastName} onChange={handleChange} />
       </label>
+      </div>
+        <div>
+
+        Occupation
       <label className="input input-bordered flex items-center gap-2" >
-        Password:
         <input type="password" name="Password" value={formData.Password} onChange={handleChange} />
       </label>
+        </div>
+      <div className='flex gap-8'>
+        <div>
+        Age
       <label className="input input-bordered flex items-center gap-2" >
-        Email:
+        <input type="password" name="Password" value={formData.Password} onChange={handleChange} />
+      </label>
+        </div>
+        <div>
+        Date of Birth
+      <label className="input input-bordered flex items-center gap-2" >
+        <input type="date" name="Password" value={formData.Password} onChange={handleChange} />
+      </label>
+        </div>
+        <div>
+        Blood Type
+      <label className="input input-bordered flex items-center gap-2" >
+      <select name="cars" id="cars">
+    <option value="A+">A+</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-">AB-</option>
+  </select>
+      </label>
+        </div>
+
+      </div>
+      <div>
+
+      Primary Address
+      <label className="input input-bordered flex items-center gap-2" >
         <input type="email" name="Email" value={formData.Email} onChange={handleChange} />
       </label>
+      </div>
+      <div className='flex gap-8 flex-wrap'>
+        <div>
+
+        City
       <label className="input input-bordered flex items-center gap-2" >
-        Phone Number:
-        <input type="tel" name="PhoneNumber" value={formData.PhoneNumber} onChange={handleChange} />
+        <input type="email" name="Email" value={formData.Email} onChange={handleChange} />
       </label>
+        </div>
+        <div>
+
+        State
       <label className="input input-bordered flex items-center gap-2" >
-        Address:
-        <input type="text" className="grow" name="Address" value={formData.Address} onChange={handleChange} />
+        <input type="email" name="Email" value={formData.Email} onChange={handleChange} />
       </label>
+        </div>
+        <div>
+
+        Zip Code
       <label className="input input-bordered flex items-center gap-2" >
-        Blood Type:
-        <input type="text" className="grow" name="BloodType" value={formData.BloodType} onChange={handleChange} />
+        <input type="email" name="Email" value={formData.Email} onChange={handleChange} />
       </label>
-      <label className="input input-bordered flex items-center gap-2" >
+        </div>
+      <div >
+        Last time donated blood ?
+        <label className="input input-bordered flex items-center gap-2 " >
+      <select name="cars" id="cars" className='w-full outline-none'>
+        <option value="0">0 Month Ago</option>
+        <option value="1">1 Month Ago</option>
+        <option value="2">2 Month Ago</option>
+        <option value="3">3 Month Ago</option>
+        <option value="4">4 Month Ago</option>
+        <option value="5">5 Month Ago</option>
+        <option value="6">6 Month Ago</option>
+        <option value="7">7 Month Ago</option>
+        <option value="8">8+ Month Ago</option>
+      </select>
+      </label>
+
+      </div>
+      </div>
+      <div>
+
         Medical History:
-        <textarea name="MedicalHistory" value={formData.MedicalHistory} onChange={handleChange} />
+      <label className="input input-bordered flex items-center gap-2 h-fit p-4" >
+        <textarea name="MedicalHistory"  className="w-full p-2 border-none outline-none " value={formData.MedicalHistory} onChange={handleChange} />
       </label>
-      <label className="input input-bordered flex items-center gap-2" >
-        Availability:
-        <input type="text" className="grow" name="Availability" value={formData.Availability} onChange={handleChange} />
-      </label>
-      <label className="input input-bordered flex items-center gap-2" >
-        Consent:
+      </div>
+      <div className="input input-bordered flex items-center gap-2" >
+        Notification for near donation camp  
         <input type="checkbox" name="Consent" checked={formData.Consent} onChange={() => setFormData(prevState => ({ ...prevState, Consent: !prevState.Consent }))} />
-      </label>
-      <button type="submit">Submit</button>
+      </div>
+      <div className="input input-bordered flex items-center gap-2" >
+        Available for emergency donation
+        <input type="checkbox" name="Consent" checked={formData.Consent} onChange={() => setFormData(prevState => ({ ...prevState, Consent: !prevState.Consent }))} />
+      </div>
+      <button type="submit" className='btn btn-outline'>Submit</button>
     </form>
     </div>
   );
