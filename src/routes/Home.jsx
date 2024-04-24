@@ -7,7 +7,7 @@ import Volunteer from '../component/Home/Volunteer'
 
 const root = () => {
     return (
-      <div className="app-container">
+      <div className="app-container" data-theme="light">
       <div className="search-bar-container">
         <SearchBar />
       </div>
