@@ -33,7 +33,7 @@ const ProfileDetails = ( ) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put('http://localhost:3000/api/user', {
+    await axios.put(`${process.env.REACT_APP_BackendUrl}api/user/`, {
       formData
     })
     // Handle form submission here, you can send formData to backend or perform any other action

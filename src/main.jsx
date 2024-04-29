@@ -16,7 +16,6 @@ import Auth from './routes/Auth.jsx';
 import Blog from './routes/Blog.jsx';
 import Filter from './routes/Filter.jsx';
 import Signup from './routes/Signup.jsx';
-import ProfileDetails from './component/UserDashboard/ProfileDetails.jsx';
 import Notifications from './component/UserDashboard/Notifications.jsx';
 import UserDashboard from './routes/UserDashboard.jsx';
 

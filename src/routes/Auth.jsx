@@ -5,7 +5,7 @@ export default function Auth() {
   const [password, setPassword] = useState('');
 
   const handleSignIn = async () => {
-      await axios.post('http://localhost:3000/api/signin',{Email:email,Password:password})
+      await axios.post(`${process.env.REACT_APP_BackendUrl}api/signin`,{Email:email,Password:password})
     }
   return (
     <div className="h-[100vh] w-[100vw] flex justify-center items-center">
