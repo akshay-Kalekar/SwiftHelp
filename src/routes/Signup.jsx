@@ -32,7 +32,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`${process.env.REACT_APP_BackendUrl}api/user/`, {
+    await axios.post(`${process.env.BackendUrl}api/user/`, {
       formData
     })
     // Handle form submission here, you can send formData to backend or perform any other action
