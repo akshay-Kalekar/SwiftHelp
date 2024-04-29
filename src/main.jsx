@@ -16,7 +16,9 @@ import Auth from './routes/Auth.jsx';
 import Blog from './routes/Blog.jsx';
 import Filter from './routes/Filter.jsx';
 import Signup from './routes/Signup.jsx';
-
+import ProfileDetails from './component/UserDashboard/ProfileDetails.jsx';
+import Notifications from './component/UserDashboard/Notifications.jsx';
+import UserDashboard from './routes/UserDashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +44,16 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/:username', // Dynamic route parameter for the username
+    element: <UserDashboard />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/:username/notify', // Dynamic route parameter for the username
+    element: <Notifications />,
     errorElement: <ErrorPage />,
   },
 ]);

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Sliderbar from './Sidebar'
 import { useAuth0 } from "@auth0/auth0-react";
-const Signup = () => {
+const ProfileDetails = ( ) => {
   const { user } = useAuth0();
   const [formData, setFormData] = useState({
-    UserID: user.sub,
+    UserID: '',
     FullName: '',
     Email: '',
     ContactNo: '',
@@ -32,7 +33,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:3000/api/user', {
+    await axios.put('http://localhost:3000/api/user', {
       formData
     })
     // Handle form submission here, you can send formData to backend or perform any other action
@@ -155,11 +156,11 @@ const Signup = () => {
           Available for emergency donation
           <input type="checkbox" name="SOSNotify" checked={formData.SOSNotify} onChange={() => setFormData(prevState => ({ ...prevState, SOSNotify: !prevState.SOSNotify }))} />
         </div>
-        <button type="submit" className='btn btn-outline'>Submit</button>
+        <button type="submit" className='btn btn-outline'>Update Info</button>
       </form>
     </div>
     </>
   );
 };
 
-export default Signup;
+export default ProfileDetails;

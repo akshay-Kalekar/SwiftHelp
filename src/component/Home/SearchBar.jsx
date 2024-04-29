@@ -1,10 +1,31 @@
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import axios from 'axios';
+import { useEffect, useState } from "react";
 
 const SearchBar = () => {
   const { loginWithRedirect,logout } = useAuth0();
   const { user, isAuthenticated, isLoading } = useAuth0();
+  const [route, setRoute] = useState('/signup')
   console.log("State : ",user)
+  const handleLoginAndCheckDB = async () => {
+    loginWithRedirect();
+  };
+  
+  async function  handleRoute(){
+    if(isAuthenticated){
+
+      let res = await  axios.get(`http://localhost:3000/api/user/`+user.sub)
+      if(res.data.length>0){
+        setRoute('/'+user.sub);
+      }
+      else{
+        setRoute('/signup')
+      }
+    }
+
+  }
+  handleRoute();
   if (isLoading) {
     return <div>Loading ...</div>;
   }
@@ -33,7 +54,7 @@ const SearchBar = () => {
         </button>
         { isAuthenticated ?
           <>
-         <Link to={'/signup'}>
+         <Link to={route}>
          <button
            id="donatebtn"
            className="px-4 py-1 bg-orange-500 text-black  hover:bg-white hover:border-blue-500 hover:border-solid hover:border hover:rounded-lg"
@@ -53,7 +74,7 @@ const SearchBar = () => {
           id="donatebtn"
           
           className="px-4 py-1 bg-orange-500 text-black  hover:bg-white hover:border-blue-500 hover:border-solid hover:border hover:rounded-lg"
-          onClick={() => loginWithRedirect()}
+          onClick={handleLoginAndCheckDB}
           >
           Donate
         </button>
