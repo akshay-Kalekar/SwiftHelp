@@ -55,6 +55,11 @@ const router = createBrowserRouter([
     element: <Notifications />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: '/notify',
+    element : <Notifications/>,
+    errorElement: <ErrorPage />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
