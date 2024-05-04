@@ -14,7 +14,7 @@ const SearchBar = () => {
   
   async function  handleRoute(){
     if(isAuthenticated){
-      let res = await axios.get(`${process.env.BackendUrl}api/user/` + user.sub);
+      let res = await axios.get(`http://localhost:3000/api/user/` + user.sub);
       if(res.data.length>0){
         setRoute('/'+user.sub);
       }

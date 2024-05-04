@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth0 } from "@auth0/auth0-react";
 const ProfileDetails = ( ) => {
+  const { username } = useParams();
+  console.log(username);
   const [formData, setFormData] = useState({
     UserID: '',
     FullName: '',
@@ -20,6 +23,24 @@ const ProfileDetails = ( ) => {
     Notify: false,
     SOSNotify: false,
   });
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/api/user/${username}`);
+        const userData = response.data[0]; // Assuming response.data is the user data object
+        setFormData(userData); // Update formData state with fetched data
+        console.log(userData)
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+    fetchUserData();
+
+    return () => {
+      console.log('Cleanup',formData); 
+    };
+  }, []);
+ 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,9 +52,8 @@ const ProfileDetails = ( ) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`${process.env.BackendUrl}api/user/`, {
-      formData
-    })
+    await axios.put(`http://localhost:3000/api/user/${username}`, 
+      formData)
     // Handle form submission here, you can send formData to backend or perform any other action
     console.log(formData);
   };
@@ -45,14 +65,14 @@ const ProfileDetails = ( ) => {
       <form onSubmit={handleSubmit} className='w-full flex flex-col gap-4 px-4 lg:px-48 py-10'>
         <div>
           Full Name
-          <label className="input input-bordered flex items-center gap-2" >
-            <input type="text" className="grow" name="FullName" value={formData.FullName} onChange={handleChange} />
+          <label className="input input-bordered flex items-center gap-2  bg-slate-100" >
+            <input disabled type="text" className="grow bg-slate-100" name="FullName" value={formData.FullName} onChange={handleChange} />
           </label>
         </div>
         <div>
           Email Address
           <label className="input input-bordered flex items-center gap-2" >
-            <input type="email" className="grow" name="Email" value={formData.Email} onChange={handleChange} />
+            <input   type="email" className="grow" name="Email" value={formData.Email} onChange={handleChange} />
           </label>
         </div>
         <div>
@@ -65,8 +85,8 @@ const ProfileDetails = ( ) => {
         <div>
 
           Occupation
-          <label className="input input-bordered flex items-center gap-2" >
-            <input type="text" name="Job" value={formData.Job} onChange={handleChange} />
+          <label className="input input-bordered flex items-center gap-2 bg-slate-100" >
+            <input disabled type="text" name="Job" value={formData.Job} onChange={handleChange} />
           </label>
         </div>
         <div className='flex gap-8 flex-wrap'>
@@ -79,13 +99,13 @@ const ProfileDetails = ( ) => {
           <div>
             Date of Birth
             <label className="input input-bordered flex items-center gap-2" >
-              <input type="date" name="DOB" value={formData.DOB} onChange={handleChange} />
+              <input  type="date" name="DOB" value={formData.DOB} onChange={handleChange} />
             </label>
           </div>
           <div>
             Blood Type
-            <label className="input input-bordered flex items-center gap-2" >
-              <select name="BloodGrp" value={formData.BloodGrp} onChange={handleChange}>
+            <label className="input input-bordered flex items-center gap-2 bg-slate-100" >
+              <select disabled name="BloodGrp" value={formData.BloodGrp} onChange={handleChange}>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
                 <option value="B+">B+</option>

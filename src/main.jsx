@@ -47,7 +47,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/:username', // Dynamic route parameter for the username
-    element: <UserDashboard />,
+    element: <UserDashboard  />,
     errorElement: <ErrorPage />,
   },
   {
